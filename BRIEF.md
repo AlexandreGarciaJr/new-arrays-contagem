@@ -9,7 +9,7 @@
 - **No zero:** "Em instantes estaremos no ar."
 - **Som:** o tique da série 24, desligado por padrão, com botão.
 - **Shader:** novo, uma grade de dados que reage ao mouse. Não é a fumaça do site.
-- **Conteúdo:** logo, frase, relógio, Instagram, WhatsApp e e-mail. Sem formulário.
+- **Conteúdo:** logo, frase, relógio, Instagram e WhatsApp. Sem formulário.
 - **SEO e compartilhamento:** metas completas, imagem OG própria e JSON-LD.
 
 ## Cena única (a página não rola no desktop)
