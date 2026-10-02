@@ -1,7 +1,7 @@
 # BRIEF | Contagem regressiva new Arrays
 
 - **Objetivo:** criar suspense para o lançamento do novo site. O Sodré vai divulgar nas redes.
-- **Lançamento:** segunda-feira, 05/10/2026, às 10h (Brasília).
+- **Lançamento:** quarta-feira, 07/10/2026, às 10h (Brasília).
 - **Onde:** raiz de newarrays.com (HostGator), até a troca pelo site.
 - **Identidade:** a do site, já aprovada (Manual NA 2026, Inter, BW 900 e Blue 900/500/400/50, colchetes da marca).
 - **Relógio:** tema de tecnologia com referência à série 24. Dígitos de 7 segmentos com matriz de LED, moldura HUD com os colchetes da marca e falha cromática na troca de minuto, hora e dia. Formato DD:HH:MM:SS.

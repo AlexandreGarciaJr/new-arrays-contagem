@@ -1,6 +1,6 @@
 # new Arrays | Contagem regressiva
 
-Página temporária que fica no ar em `newarrays.com` até o lançamento do novo site, na **segunda-feira, 05/10/2026, às 10h (horário de Brasília)**.
+Página temporária que fica no ar em `newarrays.com` até o lançamento do novo site, na **quarta-feira, 07/10/2026, às 10h (horário de Brasília)**.
 
 Feita em HTML, CSS e JS puro. Não tem build, PHP nem banco de dados. Funciona em qualquer hospedagem Apache, como a HostGator.
 
@@ -12,17 +12,17 @@ Feita em HTML, CSS e JS puro. Não tem build, PHP nem banco de dados. Funciona e
    - Obs.: o site principal tem o seu próprio `.htaccess`, ou nenhum. Não deixe o desta página lá, porque ele redireciona para a raiz qualquer endereço que não existe.
 
 ## Como a hora funciona (`assets/js/contagem.js`, objeto `CFG`)
-- **Alvo fixo:** `2026-10-05T10:00:00-03:00`. Quem estiver em outro fuso vê o mesmo tempo restante.
+- **Alvo fixo:** `2026-10-07T10:00:00-03:00`. Quem estiver em outro fuso vê o mesmo tempo restante.
 - **Correção do relógio:** a página faz um `HEAD` no próprio servidor e lê o cabeçalho `Date`, que o Apache envia em toda resposta.
   - Se o relógio do aparelho estiver errado em mais de 2 s, a página usa a hora do servidor.
   - Sem resposta do servidor, usa o relógio do navegador.
-- **Barra de progresso:** vai de `CFG.inicio` (7 dias antes) até o alvo.
+- **Barra de progresso:** vai de `CFG.inicio` (28/09) até o alvo.
 - **No zero:** o relógio para em 00, aparece "Em instantes estaremos no ar." e o status muda para "Deploy".
 
 ## Parâmetros de teste
 | URL | Efeito |
 |---|---|
-| `?simular=2026-10-05T09:59:50-03:00` | Finge que "agora" é esse instante. Serve para ver a chegada ao zero. |
+| `?simular=2026-10-07T09:59:50-03:00` | Finge que "agora" é esse instante. Serve para ver a chegada ao zero. |
 | `?simular=...&congelar=1` | Para o relógio no instante simulado. Foi usado para gerar a `og-contagem.png`. |
 | `?campo=forcar` | Liga o WebGL mesmo em GPU por software (ambientes de teste). |
 

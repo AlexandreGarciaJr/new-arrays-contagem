@@ -6,15 +6,15 @@
      (HostGator/Apache envia em toda resposta, sem PHP). Se o
      relógio do aparelho estiver errado em mais de 2 s, corrige.
      Sem resposta do servidor, usa o relógio do navegador.
-   - Teste: ?simular=2026-10-05T09:59:50-03:00 finge que "agora"
+   - Teste: ?simular=2026-10-07T09:59:50-03:00 finge que "agora"
      é esse instante (útil para ver o estado final).
    ========================================================= */
 (() => {
   'use strict';
 
   const CFG = {
-    alvo: '2026-10-05T10:00:00-03:00',   // segunda-feira, 05/10/2026, 10h (Brasília)
-    inicio: '2026-09-28T10:00:00-03:00', // começo da barra de progresso (7 dias antes)
+    alvo: '2026-10-07T10:00:00-03:00',   // quarta-feira, 07/10/2026, 10h (Brasília)
+    inicio: '2026-09-28T10:00:00-03:00', // começo da barra de progresso (28/09)
     toleranciaMs: 2000,                  // diferença mínima para corrigir o relógio local
     mensagens: ['// inicializando…', '// compilando experiência', '// conectando canais', '// alocando memória', '// renderizando o novo'],
     mensagemFinal: '// deploy em andamento'
@@ -157,7 +157,7 @@
       if (p.h) itens.push(pl(p.h, 'hora', 'horas'));
       if (p.m || !itens.length) itens.push(pl(p.m, 'minuto', 'minutos'));
       const lista = itens.length > 1 ? itens.slice(0, -1).join(', ') + ' e ' + itens.at(-1) : itens[0];
-      leitor.textContent = `Faltam ${lista} para o lançamento do novo site, na segunda-feira, 5 de outubro de 2026, às 10h, horário de Brasília.`;
+      leitor.textContent = `Faltam ${lista} para o lançamento do novo site, na quarta-feira, 7 de outubro de 2026, às 10h, horário de Brasília.`;
     }
 
     if (p.total === 0 && !zerado) finalizar();
