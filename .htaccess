@@ -15,23 +15,21 @@ DirectoryIndex index.html
   RewriteRule ^ / [L,R=302]
 </IfModule>
 
-# Tipos
 AddType image/svg+xml .svg
 AddType font/woff2 .woff2
 AddType application/manifest+json .webmanifest
 
-# Compressão
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/manifest+json application/xml text/plain
 </IfModule>
 
-# Cache: o HTML nunca fica guardado (na troca pelo site novo, todos veem na hora).
+# O HTML nunca fica guardado: na troca pelo site novo, todos veem na hora.
 <IfModule mod_headers.c>
   <FilesMatch "\.(html)$">
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
   <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "public, max-age=3600"
+    Header set Cache-Control "public, max-age=600"
   </FilesMatch>
   <FilesMatch "\.(png|svg|woff2|ico)$">
     Header set Cache-Control "public, max-age=604800"

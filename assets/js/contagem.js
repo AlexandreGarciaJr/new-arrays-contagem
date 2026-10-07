@@ -123,6 +123,7 @@
   const pct = $('[data-pct]');
   const leitor = $('[data-leitor]');
   const aviso = $('[data-aviso]');
+  $('[data-atualizar]').addEventListener('click', () => location.replace('/'));
   const codigo = $('[data-codigo]');
   const statusTxt = $('[data-status-texto]');
   const pl = (n, s, p) => `${n} ${n === 1 ? s : p}`;
@@ -170,7 +171,7 @@
     document.documentElement.classList.add('zerado');
     relogio.classList.remove('meio');
     aviso.hidden = false;
-    leitor.textContent = 'Em instantes estaremos no ar.';
+    leitor.textContent = 'Em instantes estaremos no ar. Atualize a página para ver o novo site.';
     statusTxt.textContent = 'Deploy';
     codigo.textContent = CFG.mensagemFinal;
     barra.style.transform = 'scaleX(1)';
@@ -250,6 +251,7 @@
       let i = 0;
       codigo.textContent = '';
       const passo = () => {
+        if (zerado) return res();
         codigo.textContent = texto.slice(0, ++i);
         if (i < texto.length) setTimeout(passo, 38 + Math.random() * 40); else res();
       };

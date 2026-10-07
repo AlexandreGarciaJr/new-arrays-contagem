@@ -255,11 +255,42 @@ a { color: inherit; }
 }
 html:not(.js) .relogio__visor, html:not(.js) .progresso, html:not(.js) .colchete { display: none; }
 
-.aviso {
-  margin: clamp(24px, 4vh, 40px) 0 0;
+.aviso { margin: clamp(24px, 4vh, 40px) 0 0; text-align: center; }
+.aviso p { margin: 0; }
+.aviso__titulo {
   font-size: clamp(20px, 2.4vw, 32px); font-weight: 600; letter-spacing: -0.01em;
-  color: var(--blue-50); text-align: center;
+  color: var(--blue-50);
 }
+.aviso__acao {
+  margin-top: 14px !important;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px;
+  font-size: clamp(15px, 1.25vw, 18px); color: var(--tinta-suave);
+}
+.aviso kbd {
+  display: inline-grid; place-items: center; min-width: 34px; height: 28px; padding: 0 8px;
+  font: 600 13px/1 var(--mono); color: var(--tinta);
+  border: 1px solid var(--linha-forte, rgb(255 255 255 / 0.18)); border-bottom-width: 3px; border-radius: 6px;
+  background: rgb(255 255 255 / 0.04);
+}
+.atualizar {
+  display: inline-flex; align-items: center; gap: 8px;
+  min-height: 44px; padding: 0 20px;
+  font: 600 15px/1 "Inter", system-ui, sans-serif; color: var(--bw-900);
+  background: var(--blue-400); border: 0; border-radius: 999px; cursor: pointer;
+  box-shadow: 0 0 0 0 rgb(64 173 189 / 0.5);
+  animation: chama 1.8s ease-out infinite;
+  transition: background .25s, transform .25s var(--ease-out);
+}
+.atualizar:hover { background: var(--blue-50); transform: translateY(-1px); }
+.atualizar:hover svg { transform: rotate(-200deg); }
+.atualizar svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .6s var(--ease-out); }
+/* Celular e tablet não têm F5: lá fica só "clique aqui para atualizar a página" */
+.so-toque { display: none; }
+@media (hover: none) and (pointer: coarse) {
+  .so-teclado { display: none; }
+  .so-toque { display: inline; }
+}
+@keyframes chama { 70% { box-shadow: 0 0 0 12px rgb(64 173 189 / 0); } 100% { box-shadow: 0 0 0 0 rgb(64 173 189 / 0); } }
 .aviso[hidden] { display: none; }
 
 /* ---------- Base: frase + contatos ---------- */
